@@ -1,7 +1,9 @@
+# http://www.pythonchallenge.com/pc/def/equality.html
+
 import re
 
 
-def ch_3():
+def main():
     data = """
 kAewtloYgcFQaJNhHVGxXDiQmzjfcpYbzxlWrVcqsmUbCunkfxZWDZjUZMiGqhRRiUvGmYmvnJIHEmbT
 MUKLECKdCthezSYBpIElRnZugFAxDRtQPpyeCBgBfaRVvvguRXLvkAdLOeCKxsDUvBBCwdpMMWmuELeG
@@ -1265,4 +1267,4 @@ PBuijeoTSpsVLaOGuLVjMZXkBvVXwUuHfBihziiavGSYofPNeKsTXruMUumRRPQJzvSzJkKbtSipiqBd
 
 
 if __name__ == '__main__':
-    ch_3()
+    main()

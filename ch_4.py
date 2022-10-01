@@ -1,4 +1,8 @@
 '''
+http://www.pythonchallenge.com/pc/def/linkedlist.html ->
+http://www.pythonchallenge.com/pc/def/linkedlist.php
+http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345
+
 nothing=12345
 and the next nothing is 44827
 
@@ -10,7 +14,7 @@ import re
 import requests
 
 
-def ch_4(nothing):
+def main(nothing):
     r = requests.get('http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing={}'.format(nothing))
     n = re.findall('[0-9]+', r.text)
 
@@ -24,14 +28,16 @@ def ch_4(nothing):
         print('************************')
         n = str(int(int(nothing) / 2))
 
+    # check for .html in the response text
     stop_chex = re.search(".html", r.text)
     if stop_chex is not None:
-        pass
+        print("ch_4 ----------")
+        print(r.text)
     else:
         print("ch_4 ----------")
         print(n)
-        ch_4(n)
+        main(n)
 
 
 if __name__ == '__main__':
-    ch_4('12345')
+    main('12345')
