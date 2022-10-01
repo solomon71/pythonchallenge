@@ -24,10 +24,13 @@ def ch_4(nothing):
         print('************************')
         n = str(int(int(nothing) / 2))
 
-    print("ch_4 ----------")
-    print(n)
-
-    ch_4(n)
+    stop_chex = re.search(".html", r.text)
+    if stop_chex is not None:
+        pass
+    else:
+        print("ch_4 ----------")
+        print(n)
+        ch_4(n)
 
 
 if __name__ == '__main__':

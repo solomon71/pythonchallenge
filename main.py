@@ -2,7 +2,7 @@
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-import ch_0, ch_1, ch_2, ch_3
+import ch_0, ch_1, ch_2, ch_3, ch_4
 
 
 def print_hi(name):
@@ -17,5 +17,6 @@ if __name__ == '__main__':
     ch_1.ch_1()
     ch_2.ch_2()
     ch_3.ch_3()
+    ch_4.ch_4('12345')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
