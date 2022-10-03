@@ -6,10 +6,12 @@
 import re
 import zipfile
 
+from config import ROOT_DIR
+
 comments = []
 
 def main(nothing):
-    f = zipfile.ZipFile('./files/channel.zip')
+    f = zipfile.ZipFile(ROOT_DIR + 'src/files/channel.zip')
     contents = f.read('{}.txt'.format(nothing)).decode("utf-8")
     comment = f.getinfo('{}.txt'.format(nothing)).comment.decode("utf-8")
     comments.append(comment)
