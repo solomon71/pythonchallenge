@@ -1,3 +1,2 @@
 import os
-ROOT_DIR = os.path.abspath(os.curdir)
-print(ROOT_DIR)
+ROOT_DIR = os.path.abspath(os.path.dirname(__file__))

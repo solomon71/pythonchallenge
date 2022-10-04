@@ -6,12 +6,13 @@
 import re
 import zipfile
 
-from config import ROOT_DIR
+import config
 
 comments = []
 
+
 def main(nothing):
-    f = zipfile.ZipFile(ROOT_DIR + 'src/files/channel.zip')
+    f = zipfile.ZipFile(config.ROOT_DIR + '/src/files/channel.zip')
     contents = f.read('{}.txt'.format(nothing)).decode("utf-8")
     comment = f.getinfo('{}.txt'.format(nothing)).comment.decode("utf-8")
     comments.append(comment)
@@ -19,11 +20,11 @@ def main(nothing):
 
     try:
         next_nothing = re.findall('[0-9]+', contents).pop()
-        print(next_nothing)
+        # print(next_nothing)
         main(next_nothing)
     except IndexError:
-        print(contents)
-        print(comments)
+        # print(contents)
+        # print(comments)
         print(''.join(comments))
 
         # it's in the air. look at the letters.

@@ -1,9 +1,8 @@
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
-from src import ch_0, ch_1, ch_2, ch_3, ch_4, ch_5, ch_6
 import os
-from config import ROOT_DIR
+from src import ch_0, ch_1, ch_2, ch_3, ch_4, ch_5, ch_6, ch_7
 
 
 def print_hi(name):
@@ -24,7 +23,9 @@ if __name__ == '__main__':
     ch_4.main('66831')  # ch_4.ch_4('12345')
     ch_5.main()
 
+    print("ch_6 --START---")
     ch_6.main('90052')
+    ch_7.main()
 
     print("")
     print("----------")
