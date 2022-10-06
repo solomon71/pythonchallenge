@@ -3,28 +3,27 @@
 # http://www.pythonchallenge.com/pc/def/oxygen.png
 
 from PIL import Image
-from PIL.ExifTags import TAGS
+import re
 
 import config
 
 
 def main():
-    im = Image.open(config.ROOT_DIR + '/src/files/oxygen.png')
-    exifdata = im.getexif()
+    print('ch_7 --START---')
+    img = Image.open(config.ROOT_DIR + '/src/files/oxygen.png')
+    color_blocks = [img.getpixel((x, int(img.height / 2))) for x in range(img.width)]
+    color_blocks = color_blocks[::7]  # get every 7th pixel
+    ordinals = [b for (r, g, b, a) in color_blocks if r == g == b]  # only grab gray pixels
+    message = ''.join(map(chr, ordinals))
+    print(message)  # smart guy, you made it. the next level is [105, 110, 116, 101, 103, 114, 105, 116, 121]
 
-    # iterating over all EXIF data fields
-    for tag_id in exifdata:
-        # get the tag name, instead of human unreadable tag id
-        tag = TAGS.get(tag_id, tag_id)
-        data = exifdata.get(tag_id)
-        # decode bytes
-        if isinstance(data, bytes):
-            data = data.decode()
-        print(f"{tag:25}: {data}")
+    new_message_list = re.findall("\d+", message)
+    new_message = ''.join(map(chr, map(int, new_message_list)))
 
-    print(im.format, im.size, im.mode)
+    print(new_message)  # integrity
+
     print("ch_7 ----------")
-    print("oxygen")
+    print("integrity")
 
 
 if __name__ == '__main__':
