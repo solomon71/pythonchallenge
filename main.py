@@ -2,7 +2,7 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
 import os
-from src import ch_0, ch_1, ch_2, ch_3, ch_4, ch_5, ch_6, ch_7
+from src import ch_0, ch_1, ch_2, ch_3, ch_4, ch_5, ch_6, ch_7, ch_8
 
 
 def print_hi(name):
@@ -26,6 +26,7 @@ if __name__ == '__main__':
     print("ch_6 --START---")
     ch_6.main('90052')
     ch_7.main()
+    ch_8.main()
 
     print("")
     print("----------")
